@@ -52,4 +52,6 @@ type env and the OMW_API_KEY=1234567890 is listed
 in bash run
 python3 main.py
 
+works sends text
+
 if dont work you might need to re enter ENV they are lost after browser refresh
