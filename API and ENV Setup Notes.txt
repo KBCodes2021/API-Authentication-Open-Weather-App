@@ -1,0 +1,55 @@
+This is built off 100 days (#35 (313)) of Python to build a REST API send to Open Weather using the free general API,
+and catch the response JSON. This is a good template build other REST API
+
+"http://api.openweathermap.org/data/2.5/weather?q=London,UK&appid=1234567890"
+
+https://openweathermap.org/api
+
+https://api.openweathermap.org/data/2.5/weather?lat=33.44&lon=-94.04&appid={1234567890}
+
+https://api.openweathermap.org/data/3.0/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid={API key}
+
+
+----ENV Notes how to set them up in pycharm(didnt really work using hyper uses git so got closer----------
+
+File>Settings>Build,Execution,Deployment>Console>Python Console> Environmental Variables.
+
+api_key = os.environ.get("OMW_API_KEY")
+
+running in pycharm gives
+
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: http://api.openweathermap.org/data/2.5/weather?lat=51&lon=0
+
+if you use HYPER
+
+works:
+env
+export OMW_API_KEY=1234567890
+env (see the env we added)
+
+doesnt work:
+python3 main.py
+
+ModuleNotFoundError: No module named 'requests'
+
+
+--------------------------------ENV Notes how to set them up in Python automate------------------------------------------
+
+open BASH console type env
+this lists the env normally
+
+then enter to save to ENV
+export OMW_API_KEY=1234567890
+
+then replace weatherAPI with
+api_key = os.environ.get("OMW_API_KEY")
+
+if the console gets stuck use
+exit() then refresh page back to bash where these cmds will work again
+
+type env and the OMW_API_KEY=1234567890 is listed
+
+in bash run
+python3 main.py
+
+if dont work you might need to re enter ENV they are lost after browser refresh
